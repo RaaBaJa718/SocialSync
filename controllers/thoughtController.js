@@ -1,4 +1,4 @@
-const Thought = require("../models/thought");
+const Thought = require("../models/thoughts");
 const User = require("../models/users");
 
 // Get all thoughts
