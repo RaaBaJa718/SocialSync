@@ -1,17 +1,15 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const connectDB = require("./config/db"); // Import database connection
+const connectDB = require("./config/connections"); // Database connection
 
 dotenv.config();
+connectDB(); // Initialize MongoDB connection
+
 const app = express();
 app.use(express.json());
 
-// Connect to Database
-connectDB();
-
-// Routes (we will add these files next!)
-app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/thoughts", require("./routes/thoughtRoutes"));
+// Use centralized routes
+app.use("/api", require("./routes"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
