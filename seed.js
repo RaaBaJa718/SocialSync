@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const User = require("./models/user");
-const Thought = require("./models/thought");
+const User = require("./models/users");
+const Thought = require("./models/thoughts");
 const connectDB = require("./config/connections");
 
 connectDB();
