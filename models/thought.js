@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const ReactionSchema = require("./reaction"); // Import the separate Reaction schema
+const ReactionSchema = require("../models/reaction"); // Keep it lowercase to match the file name // Import the separate Reaction schema
 
 // Define Thought Schema
 const ThoughtSchema = new mongoose.Schema({
