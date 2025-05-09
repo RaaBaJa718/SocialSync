@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
   friends: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "user",
     },
   ],
 },
@@ -37,4 +37,4 @@ UserSchema.virtual("friendCount").get(function () {
 });
 
 // Export the model
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("user", UserSchema, "users");
