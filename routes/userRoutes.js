@@ -1,18 +1,9 @@
 const express = require("express");
-const User = require("../models/users");
-const userController = require("../controllers/userController");
-
-const {
-  getAllUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-} = require("../controllers/userController");
+const { getAllUsers, getUserById, createUser, updateUser, deleteUser, addFriend, deleteFriend } = require("../controllers/userController"); // ✅ Proper Import
 
 const router = express.Router();
 
-// Define routes
+// Debug Route to check users
 router.get("/debug", async (req, res) => {
   try {
     const users = await User.find();
@@ -24,11 +15,15 @@ router.get("/debug", async (req, res) => {
   }
 });
 
+// Main Routes
 router.get("/", getAllUsers); // Get all users
 router.get("/:userId", getUserById); // Get a user by ID
 router.post("/", createUser); // Create a new user
 router.put("/:userId", updateUser); // Update a user by ID
 router.delete("/:userId", deleteUser); // Delete a user by ID
-router.post("/:userId/friends/:friendId", userController.addFriend);
+
+// Friend Routes
+router.post("/:userId/friends/:friendId", addFriend); // ✅ Fix function reference
+router.delete("/:userId/friends/:friendId", deleteFriend); // ✅ Fix function reference
 
 module.exports = router;
