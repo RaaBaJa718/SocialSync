@@ -36,7 +36,7 @@ SocialSync is a back-end API designed to manage users, thoughts, friends, and re
 
 ## Walkthrough Video
 🎬 Check out the full project walkthrough here:
-👉 (https://app.screencastify.com/v3/watch/o9PuOqEqkB8aazez23bX)
+👉 [(https://app.screencastify.com/v3/watch/TUXZBGNTlF13AbMEpmAw)
 
 ## License
 
